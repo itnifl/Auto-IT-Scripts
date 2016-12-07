@@ -1,6 +1,6 @@
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #AutoIt3Wrapper_Icon=193735-200.ico
-#AutoIt3Wrapper_Outfile=MacroEditor.Exe
+#AutoIt3Wrapper_Outfile=DigitalSigner.Exe
 #AutoIt3Wrapper_Change2CUI=y
 #AutoIt3Wrapper_Res_Fileversion=0.1.0.0
 #AutoIt3Wrapper_Add_Constants=n
@@ -11,7 +11,7 @@
  Author:         Atle Holm
 
  Script Function:
-	Run word and then hit ALt+F11
+	Run word and then hit ALt+F11+T+D
 
 #ce ----------------------------------------------------------------------------
 
@@ -29,14 +29,16 @@ Else
 EndIf
 Send("#{ALTDOWN}")
 Send("#{F11}")
+Send("#{T}")
+Send("#{D}")
 Send("#{ALTUP}")
 
 
 Func displayHelpScreen()
-	ConsoleWrite ("************  Makro Help Screen   ************" & @CRLF)
-	ConsoleWrite ("  Open makro editor on specific word document:" & @CRLF)
+	ConsoleWrite ("************  DigitalSigner Help Screen   ************" & @CRLF)
+	ConsoleWrite ("  Open makro editor for digital signing on specific word document:" & @CRLF)
 	ConsoleWrite ("     MakroEditor.exe D:\wordfile.docx WordTitle" & @CRLF)
-	ConsoleWrite ("  Open makro editor on a new word document:" & @CRLF)
+	ConsoleWrite ("  Open makro editor for digital signing on a new word document:" & @CRLF)
 	ConsoleWrite ("     MakroEditor.exe")
 	Exit
 EndFunc
