@@ -18,7 +18,8 @@
 #include <MsgBoxConstants.au3>
 Local $exePath = IniRead("ButtonMove.ini", "Program", "exePath", "default")
 Local $appTitle = IniRead("ButtonMove.ini", "Program", "appTitle", "default")
-Local $iPID = Run($exePath, "", @SW_SHOWMAXIMIZED)
+Local $workingDir = IniRead("ButtonMove.ini", "Program", "workDirectory", "default")
+Local $iPID = Run($exePath, $workingDir, @SW_SHOWMAXIMIZED)
 WinWait("[CLASS:" & $appTitle & "]", "", 3)
 Send("#{RWin down}{Right}")
 Send("#{Right}")
